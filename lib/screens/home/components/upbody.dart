@@ -1,3 +1,4 @@
+import 'package:appmintic/funcionality/tienda_funcionality.dart';
 import 'package:flutter/material.dart';
 
 class UpBody extends StatelessWidget {
@@ -44,7 +45,8 @@ class UpBody extends StatelessWidget {
             ),
           )
         ]),
-      )
+      ),
+      AddShop("fullName", "company", 15)
     ]);
   }
 }

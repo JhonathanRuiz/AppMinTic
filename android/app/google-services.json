@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "73794003628",
+    "project_id": "mibarrioapp-334720",
+    "storage_bucket": "mibarrioapp-334720.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73794003628:android:9198a98391c3f557a23509",
+        "android_client_info": {
+          "package_name": "com.example.appmintic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73794003628-kabm6rjl16deie4v9l5fdb28c9qtaeht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAR609-eeJcF8I1azCIgLJWcKn3K3olXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73794003628-kabm6rjl16deie4v9l5fdb28c9qtaeht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
