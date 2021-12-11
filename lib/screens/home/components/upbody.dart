@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class UpBody extends StatelessWidget {
+  const UpBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: banner());
-  }
-
-  Column banner() {
-    Column content = Column(children: [
+    return Column(children: [
       SizedBox(
         width: double.infinity,
         height: 250,
@@ -50,6 +46,5 @@ class Home extends StatelessWidget {
         ]),
       )
     ]);
-    return content;
   }
 }

@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             labelStyle: TextStyle(
                 color: primary, fontSize: 24.0, fontWeight: FontWeight.bold),
           )),
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

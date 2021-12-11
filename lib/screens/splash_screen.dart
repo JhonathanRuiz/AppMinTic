@@ -1,4 +1,4 @@
-import 'package:appmintic/screens/home.dart';
+import 'package:appmintic/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
