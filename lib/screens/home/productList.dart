@@ -1,23 +1,24 @@
-import 'package:appmintic/funcionality/tiendafuncionality.dart';
+import 'package:appmintic/funcionality/productsFuncionality.dart';
+import 'package:appmintic/models/product.dart';
+import 'package:appmintic/screens/home/components/productCard.dart';
 import 'package:appmintic/screens/home/home.dart';
-import 'package:appmintic/screens/home/components/shopCard.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/tienda.dart';
+class Products extends StatefulWidget {
+  const Products({Key? key}) : super(key: key);
 
-class Shops extends StatefulWidget {
   @override
   _ShopsState createState() => _ShopsState();
 }
 
-class _ShopsState extends State<Shops> {
+class _ShopsState extends State<Products> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         child: SizedBox(
             height: 200,
             child: FutureBuilder<List>(
-                future: getShops(),
+                future: getProducts(),
                 builder: (context, future) {
                   if (!future.hasData) {
                     return const Text("No hay datos");
@@ -27,16 +28,16 @@ class _ShopsState extends State<Shops> {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
                           if (future.data![index].recomendado) {
-                            Tienda tienda = Tienda(
+                            Product product = Product(
                                 nombre: future.data![index].nombre,
-                                telefono: future.data![index].telefono,
+                                precio: future.data![index].precio,
                                 imagen: future.data![index].imagen,
                                 descripcion: future.data![index].descripcion,
-                                website: future.data![index].website,
                                 recomendado: future.data![index].recomendado,
-                                idTienda: future.data![index].idTienda);
-                            return ShopCard(
-                                tienda: tienda,
+                                idTienda: future.data![index].idTienda,
+                                idProducto: future.data![index].idProducto);
+                            return ProductCard(
+                                product: product,
                                 press: () => Navigator.push(
                                       context,
                                       MaterialPageRoute(

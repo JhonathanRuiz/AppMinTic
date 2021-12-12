@@ -1,4 +1,5 @@
 import 'package:appmintic/funcionality/tiendafuncionality.dart';
+import 'package:appmintic/screens/home/productList.dart';
 import 'package:appmintic/screens/home/shopsList.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class UpBody extends StatelessWidget {
           )),
           const Center(
             child: Text(
-              'Mi Barrio App',
+              'Busca tus tiendas',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 40.0,
@@ -50,13 +51,24 @@ class UpBody extends StatelessWidget {
         ]),
       ),
       Container(
-        margin: EdgeInsets.only(top: paddingInk),
+        margin: const EdgeInsets.only(top: paddingInk),
         child: const Text(
           "Tiendas Recomendadas",
           style: TextStyle(fontSize: 30),
         ),
       ),
-      Shops()
+      Shops(),
+      Container(
+        margin: const EdgeInsets.only(top: paddingInk),
+        child: const Text(
+          "Productos Recomendadas",
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 20),
+        child: Products(),
+      )
     ]);
   }
 }

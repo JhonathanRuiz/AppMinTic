@@ -1,25 +1,25 @@
-import 'package:appmintic/models/tienda.dart';
+import 'package:appmintic/models/product.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-Future<List> getShops() async {
-  List<Tienda> tiendasList = [];
+Future<List> getProducts() async {
+  List<Product> productList = [];
   CollectionReference tiendas =
-      FirebaseFirestore.instance.collection("tiendas");
+      FirebaseFirestore.instance.collection("productos");
 
   QuerySnapshot tiendasQuery = await tiendas.get();
   if (tiendasQuery.docs.isNotEmpty) {
     for (var doc in tiendasQuery.docs) {
-      Tienda tienda = Tienda(
+      Product product = Product(
           nombre: doc['nombre'],
-          telefono: doc['telefono'],
+          precio: doc['precio'],
           imagen: doc['imagen'],
           descripcion: doc['descripcion'],
-          website: doc['website'],
           recomendado: doc['recomendada'],
-          idTienda: doc.id);
+          idTienda: doc['idTienda'],
+          idProducto: doc.id);
 
-      tiendasList.add(tienda);
+      productList.add(product);
     }
   }
-  return tiendasList;
+  return productList;
 }
