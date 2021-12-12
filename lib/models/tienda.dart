@@ -1,71 +1,19 @@
-import 'package:flutter/material.dart';
-
 class Tienda {
-  final String image, title, description;
-  final int price, size, id;
-  final Color color;
+  String nombre;
+  String telefono;
+  String imagen;
+  String descripcion;
+  String website;
+  bool recomendado;
+  String idTienda;
+
   Tienda({
-    required this.id,
-    required this.image,
-    required this.title,
-    required this.price,
-    required this.description,
-    required this.size,
-    required this.color,
+    required this.nombre,
+    required this.telefono,
+    required this.imagen,
+    required this.descripcion,
+    required this.website,
+    required this.recomendado,
+    required this.idTienda,
   });
 }
-
-List<Tienda> Tiendas = [
-  Tienda(
-      id: 1,
-      title: "Office Code",
-      price: 234,
-      size: 12,
-      description: dummyText,
-      image: "assets/images/bag_1.png",
-      color: Color(0xFF3D82AE)),
-  Tienda(
-      id: 2,
-      title: "Belt Bag",
-      price: 234,
-      size: 8,
-      description: dummyText,
-      image: "assets/images/bag_2.png",
-      color: Color(0xFFD3A984)),
-  Tienda(
-      id: 3,
-      title: "Hang Top",
-      price: 234,
-      size: 10,
-      description: dummyText,
-      image: "assets/images/bag_3.png",
-      color: Color(0xFF989493)),
-  Tienda(
-      id: 4,
-      title: "Old Fashion",
-      price: 234,
-      size: 11,
-      description: dummyText,
-      image: "assets/images/bag_4.png",
-      color: Color(0xFFE6B398)),
-  Tienda(
-      id: 5,
-      title: "Office Code",
-      price: 234,
-      size: 12,
-      description: dummyText,
-      image: "assets/images/bag_5.png",
-      color: Color(0xFFFB7883)),
-  Tienda(
-    id: 6,
-    title: "Office Code",
-    price: 234,
-    size: 12,
-    description: dummyText,
-    image: "assets/images/bag_6.png",
-    color: Color(0xFFAEAEAE),
-  ),
-];
-
-String dummyText =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.";

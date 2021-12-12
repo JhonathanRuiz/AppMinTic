@@ -1,10 +1,13 @@
 import 'package:appmintic/screens/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'dictionary.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
           primaryColor: primary,
           textTheme:
               GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
-          inputDecorationTheme: InputDecorationTheme(
+          inputDecorationTheme: const InputDecorationTheme(
             fillColor: Colors.white,
             filled: true,
             focusedBorder:

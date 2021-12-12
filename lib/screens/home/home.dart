@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/upbody.dart';
+import 'upbody.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

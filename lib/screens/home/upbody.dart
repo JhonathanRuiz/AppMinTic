@@ -1,5 +1,8 @@
-import 'package:appmintic/funcionality/tienda_funcionality.dart';
+import 'package:appmintic/funcionality/tiendafuncionality.dart';
+import 'package:appmintic/screens/home/shopsList.dart';
 import 'package:flutter/material.dart';
+
+import '../../dictionary.dart';
 
 class UpBody extends StatelessWidget {
   const UpBody({Key? key}) : super(key: key);
@@ -46,7 +49,14 @@ class UpBody extends StatelessWidget {
           )
         ]),
       ),
-      AddShop("fullName", "company", 15)
+      Container(
+        margin: EdgeInsets.only(top: paddingInk),
+        child: const Text(
+          "Tiendas Recomendadas",
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
+      Shops()
     ]);
   }
 }
