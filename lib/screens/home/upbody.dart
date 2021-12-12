@@ -1,13 +1,18 @@
-import 'package:appmintic/funcionality/tiendafuncionality.dart';
+import 'package:appmintic/screens/busqueda/buscar.dart';
 import 'package:appmintic/screens/home/productList.dart';
 import 'package:appmintic/screens/home/shopsList.dart';
 import 'package:flutter/material.dart';
-
 import '../../dictionary.dart';
 
-class UpBody extends StatelessWidget {
+class UpBody extends StatefulWidget {
   const UpBody({Key? key}) : super(key: key);
 
+  @override
+  _HomeStart createState() => _HomeStart();
+}
+
+class _HomeStart extends State<UpBody> {
+  TextEditingController busqueda = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -38,13 +43,19 @@ class UpBody extends StatelessWidget {
           Container(
             alignment: Alignment.bottomCenter,
             margin: const EdgeInsets.all(20),
-            child: const TextField(
+            child: TextField(
+              controller: busqueda,
               decoration: InputDecoration(
                   labelText: 'Buscar',
-                  suffixIcon: Align(
-                    widthFactor: 1.0,
-                    heightFactor: 1.0,
-                    child: Icon(Icons.search, color: Colors.green),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Buscar(busqueda.text)),
+                      );
+                    },
+                    icon: Icon(Icons.search, color: Colors.green),
                   )),
             ),
           )

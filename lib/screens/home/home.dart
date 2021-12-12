@@ -10,12 +10,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      body: UpBody(),
+      body: const UpBody(),
       drawer: NavDrawer(),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0x44000000),
-        title: Text('Mi Barrio App'),
+        backgroundColor: const Color(0x44000000),
+        title: const Text('Mi Barrio App'),
       ),
     );
   }
