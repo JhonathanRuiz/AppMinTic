@@ -1,3 +1,4 @@
+import 'package:appmintic/screens/shop/shopsTotal.dart';
 import 'package:flutter/material.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -13,10 +14,8 @@ class NavDrawer extends StatelessWidget {
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             decoration: BoxDecoration(
-                color: Colors.green,
-                image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage('assets/images/cover.jpg'))),
+              color: Colors.green,
+            ),
           ),
           ListTile(
             leading: Icon(Icons.input),
@@ -25,8 +24,11 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            title: Text('Tiendas'),
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ShopsTotal()))
+            },
           ),
           ListTile(
             leading: Icon(Icons.settings),
