@@ -1,6 +1,6 @@
 import 'package:appmintic/dictionary.dart';
+import 'package:appmintic/screens/home/home.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../models/tienda.dart';
 import 'components/body.dart';
@@ -25,19 +25,21 @@ class DetailsScreen extends StatelessWidget {
       backgroundColor: primary,
       elevation: 0,
       leading: IconButton(
-        icon: SvgPicture.asset(
-          'assets/icons/back.svg',
-          color: Colors.white,
-        ),
+        icon: Icon(Icons.arrow_back),
         onPressed: () => Navigator.pop(context),
       ),
       actions: <Widget>[
         IconButton(
-          icon: SvgPicture.asset("assets/icons/search.svg"),
-          onPressed: () {},
+          icon: Icon(Icons.search),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          },
         ),
         IconButton(
-          icon: SvgPicture.asset("assets/icons/cart.svg"),
+          icon: Icon(Icons.shopping_cart),
           onPressed: () {},
         ),
         SizedBox(width: paddingInk / 2)

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ProductTitleWithImage extends StatelessWidget {
   const ProductTitleWithImage({
-    required Key key,
+    Key? key,
     required this.tienda,
   }) : super(key: key);
 
@@ -18,7 +18,7 @@ class ProductTitleWithImage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            "Aristocratic Hand Bag",
+            "Tienda:",
             style: TextStyle(color: Colors.white),
           ),
           Text(
@@ -31,23 +31,11 @@ class ProductTitleWithImage extends StatelessWidget {
           SizedBox(height: paddingInk),
           Row(
             children: <Widget>[
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(text: "Price\n"),
-                    TextSpan(
-                      text: "Hola",
-                      style: Theme.of(context).textTheme.headline4?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
               SizedBox(width: paddingInk),
               Expanded(
                 child: Hero(
                   tag: "",
-                  child: Image.asset(
+                  child: Image.network(
                     tienda.imagen,
                     fit: BoxFit.fill,
                   ),

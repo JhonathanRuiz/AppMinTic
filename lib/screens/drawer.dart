@@ -1,3 +1,4 @@
+import 'package:appmintic/screens/home/home.dart';
 import 'package:appmintic/screens/shop/shopsTotal.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class NavDrawer extends StatelessWidget {
         children: <Widget>[
           DrawerHeader(
             child: Text(
-              'Side menu',
+              'Mi barrio app',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             decoration: BoxDecoration(
@@ -18,32 +19,20 @@ class NavDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
-            onTap: () => {},
+            leading: Icon(Icons.home),
+            title: Text('Inicio'),
+            onTap: () => {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Home()))
+            },
           ),
           ListTile(
-            leading: Icon(Icons.verified_user),
+            leading: Icon(Icons.shop),
             title: Text('Tiendas'),
             onTap: () => {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ShopsTotal()))
             },
-          ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
-          ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
           ),
         ],
       ),

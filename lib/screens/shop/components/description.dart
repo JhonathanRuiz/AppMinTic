@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class Description extends StatelessWidget {
   const Description({
-    required Key key,
+    Key? key,
     required this.tienda,
   }) : super(key: key);
 

@@ -8,12 +8,12 @@ class Tienda {
   String idTienda;
 
   Tienda({
-    required this.nombre,
-    required this.telefono,
-    required this.imagen,
-    required this.descripcion,
-    required this.website,
-    required this.recomendado,
-    required this.idTienda,
+    this.nombre = "",
+    this.telefono = "",
+    this.imagen = "",
+    this.descripcion = "",
+    this.website = "",
+    this.recomendado = true,
+    this.idTienda = "",
   });
 }

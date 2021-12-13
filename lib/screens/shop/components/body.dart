@@ -1,6 +1,11 @@
 import 'package:appmintic/dictionary.dart';
 import 'package:appmintic/models/tienda.dart';
+import 'package:appmintic/screens/shop/components/description.dart';
+import 'package:appmintic/screens/shop/components/productDetail.dart';
+import 'package:appmintic/screens/shop/components/product_title_with_image.dart';
 import 'package:flutter/material.dart';
+
+import 'add_to_cart.dart';
 
 class Body extends StatelessWidget {
   final Tienda tienda;
@@ -32,19 +37,20 @@ class Body extends StatelessWidget {
                       topRight: Radius.circular(24),
                     ),
                   ),
-                  /*   child: Column(
+                  child: Column(
                     children: <Widget>[
-                      ColorAndSize(tienda: product),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      Description(product: product),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      CounterWithFavBtn(),
-                      SizedBox(height: kDefaultPaddin / 2),
-                      AddToCart(product: product)
+                      SizedBox(height: paddingInk / 2),
+                      Description(tienda: tienda),
+                      SizedBox(height: paddingInk / 2),
+                      ProductsDetail(
+                        id: tienda.idTienda,
+                      ),
+                      SizedBox(height: paddingInk / 2),
+                      AddToCart(tienda: tienda)
                     ],
-                  ), */
+                  ),
                 ),
-                /*   ProductTitleWithImage(product: product) */
+                ProductTitleWithImage(tienda: tienda)
               ],
             ),
           )

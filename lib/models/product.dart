@@ -1,18 +1,29 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Product {
   String nombre;
   String precio;
   String imagen;
   String descripcion;
   bool recomendado;
-  String idTienda;
   String idProducto;
 
   Product(
-      {required this.nombre,
-      required this.precio,
-      required this.imagen,
-      required this.descripcion,
+      {this.nombre = "",
+      this.precio = "",
+      this.imagen = "",
+      this.descripcion = "",
       required this.recomendado,
-      required this.idTienda,
-      required this.idProducto});
+      this.idProducto = ""});
+
+  factory Product.fromFireStore(DocumentSnapshot doc) {
+    Map data = doc.data() as Map;
+    return Product(
+        nombre: data['nombre'],
+        precio: data['precio'],
+        imagen: data['imagen'],
+        descripcion: data['descripcion'],
+        recomendado: data['recomendado'],
+        idProducto: doc.id);
+  }
 }

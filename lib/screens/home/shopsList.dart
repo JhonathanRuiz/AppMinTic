@@ -1,6 +1,6 @@
 import 'package:appmintic/funcionality/tiendafuncionality.dart';
-import 'package:appmintic/screens/home/home.dart';
 import 'package:appmintic/screens/home/components/shopCard.dart';
+import 'package:appmintic/screens/shop/details_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../models/tienda.dart';
@@ -40,7 +40,9 @@ class _ShopsState extends State<Shops> {
                                 press: () => Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Home()),
+                                          builder: (context) => DetailsScreen(
+                                                tienda: tienda,
+                                              )),
                                     ));
                           }
                           return Container();

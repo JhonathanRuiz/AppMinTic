@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class AddToCart extends StatelessWidget {
   const AddToCart({
-    required Key key,
+    Key? key,
     required this.tienda,
   }) : super(key: key);
 
@@ -28,10 +28,7 @@ class AddToCart extends StatelessWidget {
               ),
             ),
             child: IconButton(
-              icon: SvgPicture.asset(
-                "assets/icons/add_to_cart.svg",
-                color: primary,
-              ),
+              icon: Icon(Icons.shopping_cart),
               onPressed: () {},
             ),
           ),

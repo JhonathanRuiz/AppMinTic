@@ -1,5 +1,6 @@
 import 'package:appmintic/dictionary.dart';
 import 'package:appmintic/models/tienda.dart';
+import 'package:appmintic/screens/shop/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class ShopCard extends StatelessWidget {
@@ -23,7 +24,12 @@ class ShopCard extends StatelessWidget {
             borderOnForeground: false,
             child: InkWell(
               onTap: () {
-                debugPrint('Card tapped.');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                              tienda: tienda,
+                            )));
               },
               child: SizedBox(
                 width: 250,
