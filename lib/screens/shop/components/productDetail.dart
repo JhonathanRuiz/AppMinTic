@@ -5,6 +5,9 @@ import 'package:appmintic/screens/home/home.dart';
 
 import 'package:flutter/material.dart';
 
+import '../../Usuarios/Login.dart';
+import '../../Usuarios/Token.dart';
+
 class ProductsDetail extends StatefulWidget {
   final String id;
   const ProductsDetail({Key? key, required this.id}) : super(key: key);
@@ -39,11 +42,17 @@ class _ProductDetail extends State<ProductsDetail> {
                                 idProducto: future.data![index].idProducto);
                             return ProductCard(
                                 product: tienda,
-                                press: () => Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => Home()),
-                                    ));
+                                press: () async {
+                                  Token tk = new Token();
+                                  String idUser = await tk.validarToken("");
+                                  print(idUser);
+                                  if (idUser == "vacio") {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) => Login()));
+                                  } else {}
+                                });
                           }
                           return Container();
                         });

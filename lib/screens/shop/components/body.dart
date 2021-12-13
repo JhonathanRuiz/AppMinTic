@@ -45,6 +45,8 @@ class Body extends StatelessWidget {
                       ProductsDetail(
                         id: tienda.idTienda,
                       ),
+                      SizedBox(height: paddingInk / 2),
+                      AddToCart(tienda: tienda),
                     ],
                   ),
                 ),
